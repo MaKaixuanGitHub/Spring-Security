@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6a1f020e-06d7-4943-90fc-6cdce1d38024" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\m2\repository" />
+        <option name="mavenHome" value="D:/maven" />
+        <option name="userSettingsFile" value="D:\maven\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YyNQWkDBrU0IMMrsUxu1gzIEMY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.JjwtdemoApplicationTests.testParseTokenByClaims">
+    <configuration name="JjwtdemoApplicationTests.testCreateExpToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jjwtdemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxxx.jjwtdemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxxx.jjwtdemo" />
+      <option name="MAIN_CLASS_NAME" value="com.xxxx.jjwtdemo.JjwtdemoApplicationTests" />
+      <option name="METHOD_NAME" value="testCreateExpToken" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JjwtdemoApplicationTests.testCreateTokenByClaims" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jjwtdemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxxx.jjwtdemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxxx.jjwtdemo" />
+      <option name="MAIN_CLASS_NAME" value="com.xxxx.jjwtdemo.JjwtdemoApplicationTests" />
+      <option name="METHOD_NAME" value="testCreateTokenByClaims" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JjwtdemoApplicationTests.testCreateTokenHasExp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jjwtdemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxxx.jjwtdemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxxx.jjwtdemo" />
+      <option name="MAIN_CLASS_NAME" value="com.xxxx.jjwtdemo.JjwtdemoApplicationTests" />
+      <option name="METHOD_NAME" value="testCreateTokenHasExp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JjwtdemoApplicationTests.testParseTokenByClaims" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jjwtdemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxxx.jjwtdemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxxx.jjwtdemo" />
+      <option name="MAIN_CLASS_NAME" value="com.xxxx.jjwtdemo.JjwtdemoApplicationTests" />
+      <option name="METHOD_NAME" value="testParseTokenByClaims" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JjwtdemoApplicationTests.testParseTokenHasExp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jjwtdemo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.xxxx.jjwtdemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.xxxx.jjwtdemo" />
+      <option name="MAIN_CLASS_NAME" value="com.xxxx.jjwtdemo.JjwtdemoApplicationTests" />
+      <option name="METHOD_NAME" value="testParseTokenHasExp" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JjwtdemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="jjwtdemo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.xxxx.jjwtdemo.JjwtdemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.JjwtdemoApplicationTests.testParseTokenByClaims" />
+        <item itemvalue="JUnit.JjwtdemoApplicationTests.testCreateTokenByClaims" />
+        <item itemvalue="JUnit.JjwtdemoApplicationTests.testParseTokenHasExp" />
+        <item itemvalue="JUnit.JjwtdemoApplicationTests.testCreateTokenHasExp" />
+        <item itemvalue="JUnit.JjwtdemoApplicationTests.testCreateExpToken" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+    <option name="myConnectionType" value="NONE" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6a1f020e-06d7-4943-90fc-6cdce1d38024" name="Default Changelist" comment="" />
+      <created>1583910858359</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583910858359</updated>
+      <workItem from="1583910861939" duration="2226000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+  </component>
+</project>
