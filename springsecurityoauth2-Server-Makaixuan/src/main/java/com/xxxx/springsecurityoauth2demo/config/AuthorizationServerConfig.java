@@ -84,9 +84,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 				//配置client-secret
 				.secret(passwordEncoder.encode("112233"))
 				//配置访问token的有效期
-				.accessTokenValiditySeconds(3600)
+				.accessTokenValiditySeconds(10)
 				//配置刷新Token的有效期
-				.refreshTokenValiditySeconds(864000)
+//				.refreshTokenValiditySeconds(864000)
 				//配置redirect_uri,用于授权成功后跳转
 				.redirectUris("http://localhost:8081/login")
 				//自动授权配置
@@ -100,7 +100,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 				.secret(passwordEncoder.encode("332211"))
 				.accessTokenValiditySeconds(3600)
 				.refreshTokenValiditySeconds(864000)
-				.redirectUris("http://192.168.105.32:8082/login")
+				.redirectUris("http://localhost:8082/login")
 				.autoApprove(true)
 				.scopes("all")
 				.authorizedGrantTypes("password","refresh_token","authorization_code");

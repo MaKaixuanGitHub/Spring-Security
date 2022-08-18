@@ -19,9 +19,48 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+//		http.csrf().disable()
+//				.authorizeRequests()
+//				.antMatchers("/oauth/**","/login/**","logout/**")
+//				.permitAll()
+//				.anyRequest()
+//				.authenticated()
+//				.and()
+//				.formLogin()
+//				.permitAll();
+		System.out.println("SecurityConfig========>configure start");
+		http.authorizeRequests()
+				.antMatchers("/oauth/**","/login/**", "logout/**").permitAll()
+				.anyRequest().authenticated()   // 其他地址的访问均需验证权限
+				.and()
+				.formLogin()
+				.loginPage("/login")
+				.and()
+				.logout().logoutSuccessUrl("/");
+
+		http.csrf().disable();
+		System.out.println("SecurityConfig========>configure end");
+	}
+
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/assets/**");
+	}
+
+//
+//	@Override
+//	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//		auth.userDetailsService(myUserDetailsService).passwordEncoder(passwordEncoder());
+//	}
+
+
 	@Bean
-	public PasswordEncoder passwordEncoder(){
-		return new BCryptPasswordEncoder();
+	@Override
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+		return super.authenticationManagerBean();
 	}
 
 	@Bean
@@ -31,27 +70,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	@Bean
-	@Override
-	public AuthenticationManager authenticationManagerBean() throws Exception {
-		return super.authenticationManagerBean();
-	}
-
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable()
-				.authorizeRequests()
-				.antMatchers("/oauth/**","/login/**","logout/**")
-				.permitAll()
-				.anyRequest()
-				.authenticated()
-				.and()
-				.formLogin()
-				.permitAll();
-	}
-
-	@Override
-	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/assets/**");
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
 
 }

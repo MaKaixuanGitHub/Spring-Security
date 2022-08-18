@@ -9,12 +9,19 @@ public class LoginController {
 
     @RequestMapping("/login")
     public String login() {
+        System.out.println("LoginController====================>login");
         return "login";
     }
 
     @GetMapping("/index")
     public String index() {
         return "index";
+    }
+
+    @RequestMapping("/mian")
+    public String main() {
+        System.out.println("LoginController====================>login");
+        return "redirect：main.html";
     }
 
 }

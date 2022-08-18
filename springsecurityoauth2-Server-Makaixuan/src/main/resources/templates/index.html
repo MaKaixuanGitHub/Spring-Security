@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <!-- Bootstrap Styles-->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link th:href="@{/static/assets/css/bootstrap.min.css}" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link href="/assets/css/font-awesome.css" rel="stylesheet" />
+    <link th:href="@{/static/assets/css/font-awesome.css}" rel="stylesheet" />
     <!-- Morris Chart Styles-->
-    <link href="/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link th:href="@{/static/assets/js/morris/morris-0.4.3.min.css}" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link href="/assets/css/custom-styles.css" rel="stylesheet" />
+    <link th:href="@{/static/assets/css/custom-styles.css}" rel="stylesheet" />
     <!-- Google Fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> 
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' />
 </head>
 
 <body>
@@ -27,18 +27,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
+                <a class="navbar-brand" th:href="index.html"><i class="fa fa-gear"></i> <strong>HYBRID</strong></a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}" aria-expanded="false">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-                        欢迎, <span th:text="${#authentication.name}">Name</span>
+<!--                        欢迎, <span th:text="${#authentication.name}">Name</span>-->
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
-                            <a href="#">
+                            <a th:href="@{#}">
                                 <div>
                                     <strong>John Doe</strong>
                                     <span class="pull-right text-muted">
@@ -50,7 +50,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">
+                            <a th:href="@{#}">
                                 <div>
                                     <strong>John Smith</strong>
                                     <span class="pull-right text-muted">
@@ -62,7 +62,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">
+                            <a th:href="@{#}">
                                 <div>
                                     <strong>John Smith</strong>
                                     <span class="pull-right text-muted">
@@ -74,7 +74,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a class="text-center" href="#">
+                            <a class="text-center" th:href="@{#}">
                                 <strong>Read All Messages</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -84,12 +84,12 @@
                 </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}" aria-expanded="false">
                         <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-tasks">
                         <li>
-                            <a href="#">
+                            <a th:href="@{#}">
                                 <div>
                                     <p>
                                         <strong>Task 1</strong>
@@ -105,7 +105,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">
+                            <a th:href="@{#}">
                                 <div>
                                     <p>
                                         <strong>Task 2</strong>
@@ -121,7 +121,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">
+                            <a th:href="@{#}">
                                 <div>
                                     <p>
                                         <strong>Task 3</strong>
@@ -137,7 +137,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">
+                            <a th:href="@{#}">
                                 <div>
                                     <p>
                                         <strong>Task 4</strong>
@@ -153,7 +153,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a class="text-center" href="#">
+                            <a class="text-center" th:href="@{#}">
                                 <strong>See All Tasks</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -163,12 +163,12 @@
                 </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}" aria-expanded="false">
                         <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-alerts">
                         <li>
-                            <a href="#">
+                            <a th:href="@{#}">
                                 <div>
                                     <i class="fa fa-comment fa-fw"></i> New Comment
                                     <span class="pull-right text-muted small">4 min</span>
@@ -177,7 +177,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">
+                            <a th:href="@{#}">
                                 <div>
                                     <i class="fa fa-twitter fa-fw"></i> 3 New Followers
                                     <span class="pull-right text-muted small">12 min</span>
@@ -186,7 +186,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">
+                            <a th:href="@{#}">
                                 <div>
                                     <i class="fa fa-envelope fa-fw"></i> Message Sent
                                     <span class="pull-right text-muted small">4 min</span>
@@ -195,7 +195,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">
+                            <a th:href="@{#}">
                                 <div>
                                     <i class="fa fa-tasks fa-fw"></i> New Task
                                     <span class="pull-right text-muted small">4 min</span>
@@ -204,7 +204,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#">
+                            <a th:href="@{#}">
                                 <div>
                                     <i class="fa fa-upload fa-fw"></i> Server Rebooted
                                     <span class="pull-right text-muted small">4 min</span>
@@ -213,7 +213,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a class="text-center" href="#">
+                            <a class="text-center" th:href="@{#}">
                                 <strong>See All Alerts</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -223,16 +223,16 @@
                 </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}" aria-expanded="false">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a th:href="@{#}"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a th:href="@{#}"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a th:href="@{#}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -242,51 +242,51 @@
         </nav>
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
-		<div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
+		<div id="sideNav" th:href=""><i class="fa fa-caret-right"></i></div>
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class="active-menu" th:href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
+                        <a th:href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
                     </li>
 					<li>
-                        <a href="chart.html"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                        <a th:href="chart.html"><i class="fa fa-bar-chart-o"></i> Charts</a>
                     </li>
                     <li>
-                        <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
+                        <a th:href="tab-panel.html"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
                     </li>
                     
                     <li>
-                        <a href="table.html"><i class="fa fa-table"></i> Responsive Tables</a>
+                        <a th:href="table.html"><i class="fa fa-table"></i> Responsive Tables</a>
                     </li>
                     <li>
-                        <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
+                        <a th:href="form.html"><i class="fa fa-edit"></i> Forms </a>
                     </li>
 
 
                     <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                        <a th:href="@{#}"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">Second Level Link</a>
+                                <a th:href="@{#}">Second Level Link</a>
                             </li>
                             <li>
-                                <a href="#">Second Level Link</a>
+                                <a th:href="@{#}">Second Level Link</a>
                             </li>
                             <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                                <a th:href="@{#}">Second Level Link<span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
                                     <li>
-                                        <a href="#">Third Level Link</a>
+                                        <a th:href="@{#}">Third Level Link</a>
                                     </li>
                                     <li>
-                                        <a href="#">Third Level Link</a>
+                                        <a th:href="@{#}">Third Level Link</a>
                                     </li>
                                     <li>
-                                        <a href="#">Third Level Link</a>
+                                        <a th:href="@{#}">Third Level Link</a>
                                     </li>
 
                                 </ul>
@@ -295,7 +295,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                        <a th:href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
                     </li>
                 </ul>
 
@@ -313,8 +313,8 @@
                             Dashboard <small>Summary of your App</small>
                         </h1>
 						<ol class="breadcrumb">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Library</a></li>
+  <li><a th:href="@{#}">Home</a></li>
+  <li><a th:href="@{#}">Library</a></li>
   <li class="active">Data</li>
 </ol>
                     </div>
@@ -322,7 +322,7 @@
 				
 				
                 <!-- /. ROW  -->
-                <div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
+                <div class="tlinks">Collect from <a th:href="@{http://www.cssmoban.com/}" >网页模板</a></div>
 
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-xs-12">
@@ -488,33 +488,33 @@
                             <div class="panel-body">
                                 <div class="list-group">
 
-                                    <a href="#" class="list-group-item">
+                                    <a th:href="@{#}" class="list-group-item">
                                         <span class="badge">7 minutes ago</span>
                                         <i class="fa fa-fw fa-comment"></i> Commented on a post
                                     </a>
-                                    <a href="#" class="list-group-item">
+                                    <a th:href="@{#}" class="list-group-item">
                                         <span class="badge">16 minutes ago</span>
                                         <i class="fa fa-fw fa-truck"></i> Order 392 shipped
                                     </a>
-                                    <a href="#" class="list-group-item">
+                                    <a th:href="@{#}" class="list-group-item">
                                         <span class="badge">36 minutes ago</span>
                                         <i class="fa fa-fw fa-globe"></i> Invoice 653 has paid
                                     </a>
-                                    <a href="#" class="list-group-item">
+                                    <a th:href="@{#}" class="list-group-item">
                                         <span class="badge">1 hour ago</span>
                                         <i class="fa fa-fw fa-user"></i> A new user has been added
                                     </a>
-                                    <a href="#" class="list-group-item">
+                                    <a th:href="@{#}" class="list-group-item">
                                         <span class="badge">1.23 hour ago</span>
                                         <i class="fa fa-fw fa-user"></i> A new user has added
                                     </a>
-                                    <a href="#" class="list-group-item">
+                                    <a th:href="@{#}" class="list-group-item">
                                         <span class="badge">yesterday</span>
                                         <i class="fa fa-fw fa-globe"></i> Saved the world
                                     </a>
                                 </div>
                                 <div class="text-right">
-                                    <a href="#">More Tasks <i class="fa fa-arrow-circle-right"></i></a>
+                                    <a th:href="@{#}">More Tasks <i class="fa fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -593,7 +593,7 @@
                 <!-- /. ROW  -->
 			
 		
-				<footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+				<footer><p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a th:href="@{http://www.cssmoban.com/}" target="_blank" title="模板之家">模板之家</a> - Collect from <a th:href="@{http://www.cssmoban.com/}" title="网页模板" target="_blank">网页模板</a></p>
 				
         
 				</footer>
@@ -605,24 +605,24 @@
     <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="/static/assets/js/jquery-1.10.2.js"></script>
     <!-- Bootstrap Js -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="/static/assets/js/bootstrap.min.js"></script>
 	 
     <!-- Metis Menu Js -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
+    <script src="/static/assets/js/jquery.metisMenu.js"></script>
     <!-- Morris Chart Js -->
-    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="assets/js/morris/morris.js"></script>
+    <script src="/static/assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="/static/assets/js/morris/morris.js"></script>
 	
 	
-	<script src="assets/js/easypiechart.js"></script>
-	<script src="assets/js/easypiechart-data.js"></script>
+	<script src="/static/assets/js/easypiechart.js"></script>
+	<script src="/static/assets/js/easypiechart-data.js"></script>
 	
-	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	 <script src="/static/assets/js/Lightweight-Chart/jquery.chart.js"></script>
 	
     <!-- Custom Js -->
-    <script src="assets/js/custom-scripts.js"></script>
+    <script src="/static/assets/js/custom-scripts.js"></script>
  
 
 </body>
