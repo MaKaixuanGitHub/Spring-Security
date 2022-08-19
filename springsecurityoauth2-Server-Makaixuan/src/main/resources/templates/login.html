@@ -27,25 +27,27 @@
     <!--/login-->
 	<div class="ror_page">
         <div class="error-top">
-            <h2>統合認証管理</h2>
+            <h2 class="inner-tittle page" style="color:bisque">統合認証管理</h2>
             <div class="login">
-                <h3 class="inner-tittle t-inner">Login</h3>
                 <form th:action="@{/login}" method="post">
                     <input type="text" name="username" value="" placeholder="Username..." >
                     <p />
                     <input type="password" name="password" value="" placeholder="Password...">
                     <div class="submit"><input type="submit" value="Login" ></div>
-                    <div class="clearfix"></div>
+<!--                    <div class="clearfix"></div>-->
 
                     <div class="new">
                         <p><label class="checkbox11"><input type="checkbox" name="checkbox"><i> </i>Forgot Password ?</label></p>
                         <p class="sign">Do not have an account ? <a th:href="@{#}">Sign Up</a></p>
-                        <div class="clearfix"></div>
+<!--                        <div class="clearfix"></div>-->
                     </div>
                 </form>
             </div>
         </div>
     </div>
+<div>
+    <footer>Copyright © 2022 makaixuan All Rights Reserved</footer>
+</div>
 
 </body>
 </html>
