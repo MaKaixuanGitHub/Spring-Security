@@ -6,15 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <!-- Bootstrap Styles-->
-    <link th:href="@{/static/assets/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{assets/css/bootstrap.min.css}" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link th:href="@{/static/assets/css/font-awesome.css}" rel="stylesheet" />
+    <link th:href="@{assets/css/font-awesome.css}" rel="stylesheet" />
     <!-- Morris Chart Styles-->
-    <link th:href="@{/static/assets/js/morris/morris-0.4.3.min.css}" rel="stylesheet" />
+    <link th:href="@{assets/js/morris/morris-0.4.3.min.css}" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link th:href="@{/static/assets/css/custom-styles.css}" rel="stylesheet" />
+    <link th:href="@{assets/css/custom-styles.css}" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' />
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="assets/js/morris/morris.js"></script>
+    <script src="assets/js/easypiechart.js"></script>
+    <script src="assets/js/easypiechart-data.js"></script>
+    <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
 </head>
 
 <body>
@@ -34,7 +50,7 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" th:href="@{#}" aria-expanded="false">
                         <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
-<!--                        欢迎, <span th:text="${#authentication.name}">Name</span>-->
+                        欢迎, <span th:text="${#authentication.name}">Name</span>
                     </a>
                     <ul class="dropdown-menu dropdown-messages">
                         <li>
@@ -242,7 +258,7 @@
         </nav>
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
-		<div id="sideNav" th:href=""><i class="fa fa-caret-right"></i></div>
+		<div id="sideNav" th:href="@{#}"><i class="fa fa-caret-right"></i></div>
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
@@ -602,29 +618,5 @@
         </div>
         <!-- /. PAGE WRAPPER  -->
     </div>
-    <!-- /. WRAPPER  -->
-    <!-- JS Scripts-->
-    <!-- jQuery Js -->
-    <script src="/static/assets/js/jquery-1.10.2.js"></script>
-    <!-- Bootstrap Js -->
-    <script src="/static/assets/js/bootstrap.min.js"></script>
-	 
-    <!-- Metis Menu Js -->
-    <script src="/static/assets/js/jquery.metisMenu.js"></script>
-    <!-- Morris Chart Js -->
-    <script src="/static/assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="/static/assets/js/morris/morris.js"></script>
-	
-	
-	<script src="/static/assets/js/easypiechart.js"></script>
-	<script src="/static/assets/js/easypiechart-data.js"></script>
-	
-	 <script src="/static/assets/js/Lightweight-Chart/jquery.chart.js"></script>
-	
-    <!-- Custom Js -->
-    <script src="/static/assets/js/custom-scripts.js"></script>
- 
-
 </body>
-
 </html>
