@@ -19,18 +19,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-//		http.csrf().disable()
-//				.authorizeRequests()
-//				.antMatchers("/oauth/**","/login/**","logout/**")
-//				.permitAll()
-//				.anyRequest()
-//				.authenticated()
-//				.and()
-//				.formLogin()
-//				.permitAll();
 		System.out.println("SecurityConfig========>configure start");
 		http.authorizeRequests()
 				.antMatchers("/oauth/**","/login/**", "logout/**").permitAll()
@@ -41,7 +31,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 				.logout().logoutSuccessUrl("/");
 
+		// 关闭csrf跨域攻击
 		http.csrf().disable();
+
 		System.out.println("SecurityConfig========>configure end");
 	}
 
@@ -50,13 +42,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		web.ignoring().antMatchers("/assets/**");
 	}
 
-//
-//	@Override
-//	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//		auth.userDetailsService(myUserDetailsService).passwordEncoder(passwordEncoder());
-//	}
-
-
+	/**
+	 * 定义认证管理器对象，这个对象负责完成用户信息的认证，
+	 * 即判定用户身份信息的合法性，在基于oauth2协议完成认
+	 * 证时，需要此对象，所以这里讲此对象拿出来交给spring管理
+	 * @return
+	 * @throws Exception Exception
+	 */
 	@Bean
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -69,6 +61,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		return super.authenticationManager();
 	}
 
+	/***
+	 * 当你将此对象注入容器时，就会自动将密码进行bc的比对校验。
+	 * 如果输入的明文密码与数据库中的加密密码不匹配则报错。
+	 * 切数据库中必须存储为bc加密的密码
+	 * @return BCryptPasswordEncoder
+	 */
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();

@@ -29,6 +29,7 @@ public class UserService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		SysUser sysUser = userDao.selectByName(username);
+		System.out.println("sysUser=================>" + sysUser);
 		if (null == sysUser) {
 			throw new UsernameNotFoundException(username);
 		}

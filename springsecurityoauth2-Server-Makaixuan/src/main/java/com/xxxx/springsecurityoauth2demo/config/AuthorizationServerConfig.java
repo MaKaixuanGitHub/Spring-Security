@@ -21,12 +21,22 @@ import java.util.List;
 
 /**
  * 授权服务器配置
- *
- * @author makx
- * @since 1.0.0
+ * Oauth2 是一种认证授权规范，它基于认证和授权定义了一套规则，在这套规则中规定了
+ * 实现一套认证授权系统需要哪些对象：
+ * 1)系统资源(数据)
+ * 2)资源拥有者(用户)
+ * 3)管理资源的服务器
+ * 4)对用户进行认证和授权的服务器
+ * 5)客户端系统(负责提交用户身份信息的系统)
+ * 思考：对于一个认证授权系统来讲，需要什么？：
+ * 1)提供一个认证的入口？(客户端去哪里认证)
+ * 2)客户端应该携带什么信息去认证？(username,password,....)
+ * 3)服务端通过谁去对客户端进行认证(一个负责认证的对象)？
+ *  @author makx
+ *  @since 1.0.0
  */
 @Configuration
-@EnableAuthorizationServer
+@EnableAuthorizationServer//在oauth2规范中启动认证和授权
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
 	@Autowired
@@ -43,7 +53,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Autowired
 	private JwtTokenEnhancer jwtTokenEnhancer;
 
-
 	/**
 	 * 使用密码模式所需配置
 	 * 该方法是用来配置Authorization Server endpoints的一些非安全特性的，比如token存储、token自定义、授权类型等等的
@@ -57,9 +66,12 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		TokenEnhancerChain enhancerChain = new TokenEnhancerChain();
 		List<TokenEnhancer> delegates = new ArrayList<>();
 		delegates.add(jwtTokenEnhancer);
+		//设置令牌增强(改变默认令牌创建方式，没有这句话默认是UUID)
 		delegates.add(jwtAccessTokenConverter);
 		enhancerChain.setTokenEnhancers(delegates);
+		//设置认证授权对象
 		endpoints.authenticationManager(authenticationManager)
+				//设置令牌业务对象(此对象提供令牌创建及有效机制设置)
 				.userDetailsService(userService)
 				//配置存储令牌策略
 				.tokenStore(tokenStore)
@@ -72,28 +84,29 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	 * 注意，除非你在下面的configure(AuthorizationServerEndpointsConfigurer)中指定了一个AuthenticationManager，
 	 * 否则密码授权方式不可用。
 	 * 至少配置一个client，否则服务器将不会启动。
+	 * 定义客户端应该携带什么信息去认证？
+	 * 指明哪些对象可以到这里进行认证(哪个客户端对象需要什么特点)。
 	 * @param clients clients
 	 * @throws Exception Exception
 	 */
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-//		clients.jdbc(dataSource);
 		clients.inMemory()
 				//配置client-id
 				.withClient("admin")
 				//配置client-secret
 				.secret(passwordEncoder.encode("112233"))
 				//配置访问token的有效期
-				.accessTokenValiditySeconds(10)
+				.accessTokenValiditySeconds(3600)
 				//配置刷新Token的有效期
-//				.refreshTokenValiditySeconds(864000)
+				.refreshTokenValiditySeconds(864000)
 				//配置redirect_uri,用于授权成功后跳转
 				.redirectUris("http://localhost:8081/login")
 				//自动授权配置
 				.autoApprove(true)
 				//配置申请的权限范围
 				.scopes("all")
-				//配置grant_type，表示授权类型
+				//配置grant_type，表示授权类型,指定认证类型(码密,刷新令牌，三方令牌，...)
 				.authorizedGrantTypes("password","refresh_token","authorization_code")
 				.and()
 				.withClient("makaixuan")
@@ -116,7 +129,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	 */
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-		//获取秘钥需要身份认证，使用单点登录时必须配置
-		security.tokenKeyAccess("isAuthenticated()");
+//		//获取秘钥需要身份认证，使用单点登录时必须配置
+//		security.tokenKeyAccess("isAuthenticated()");
+		//对外发布认证入口(/oauth/token),认证通过服务端会生成一个令牌
+		security.tokenKeyAccess("permitAll()")
+				//对外发布检查令牌的入口(/oauth/check_token)
+				.checkTokenAccess("permitAll()")
+				//允许用户通过表单方式提交认证,完成认证
+				.allowFormAuthenticationForClients();
 	}
 }
